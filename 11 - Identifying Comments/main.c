@@ -8,27 +8,25 @@
 
 int main()
 {
-    char statement[100];
+    char str[100];
     int length = 0;
 
     printf("Enter a statement: ");
-    gets(statement);
+    gets(str);
 
-    length = strlen(statement);
+    length = strlen(str);
 
-    // Checch if a statement starts with // 
-    if (statement[0] == '/' && statement[1] == '/')
+    if (str[0] == '/' && str[1] == '/')
     {
         printf("The statement is a single line comment.\n");
     }
 
-    // Check if a statement starts with /* and ends with */
-    else if ((statement[0] == '/' && statement[1] == '*') && (statement[length - 2] == '*' && statement[length - 1] == '/'))
+ 
+    else if ((str[0] == '/' && str[1] == '*') && (str[length - 2] == '*' && str[length - 1] == '/'))
     {
         printf("The statement is a multi-line comment.\n");
     }
 
-    // Default case
     else
     {
         printf("The statement is not a comment.\n");
